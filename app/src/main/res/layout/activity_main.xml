@@ -18,6 +18,7 @@
         android:text="addBook"/>
 
     <Button
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
@@ -27,5 +28,17 @@
         android:textSize="30sp"
         android:text="getBooks"
         android:layout_below="@+id/button1"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:onClick="goTo"
+        android:textSize="30sp"
+        android:text="Go To Second Page"
+        android:layout_below="@+id/button2"
         android:layout_marginTop="20dp"/>
 </RelativeLayout>

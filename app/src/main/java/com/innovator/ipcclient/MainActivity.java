@@ -106,6 +106,12 @@ public class MainActivity extends Activity {
         Log.i("TAG","打印 addBooks 之后的数据 ："+book.toString());
     }
 
+    public void goTo(View v) {
+
+        Intent i = new Intent(this,MessengerActivity.class);
+        startActivity(i);
+    }
+
     /**
      * 尝试连接上服务器
      */
