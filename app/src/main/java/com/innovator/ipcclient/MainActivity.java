@@ -112,6 +112,18 @@ public class MainActivity extends Activity {
         startActivity(i);
     }
 
+    public void goTo1(View v) {
+
+        Intent i = new Intent(this,ProviderActivity.class);
+        startActivity(i);
+    }
+
+    public void goTo2(View v) {
+
+        Intent i = new Intent(this,SocketActivity.class);
+        startActivity(i);
+    }
+
     /**
      * 尝试连接上服务器
      */
