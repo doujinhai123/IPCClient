@@ -95,7 +95,7 @@ public class SocketActivity extends AppCompatActivity implements View.OnClickLis
             String msg = mMessagetEditText.getText().toString();
             if(!TextUtils.isEmpty(msg) && mPrintWriter != null){
                 Log.i("TCP","sending message to the server");
-                mPrintWriter.write(msg);
+                mPrintWriter.println(msg);
                 mMessagetEditText.setText("");
                 String time = formateDateTime(System.currentTimeMillis());
                 String showMsg = "self"+time+":"+msg+"\n";
@@ -116,11 +116,12 @@ public class SocketActivity extends AppCompatActivity implements View.OnClickLis
         Socket socket = null;
         while (null == socket){
             try{
-                socket = new Socket("localhost",8687);
+                socket = new Socket("localhost",8688);
                 mClientSocket = socket;
                 mPrintWriter = new PrintWriter(new BufferedWriter(
                         new OutputStreamWriter(socket.getOutputStream())),true);
                 mHandler.sendEmptyMessage(MESSAGE_SOCKET_CONNECTED);
+                mPrintWriter.println("我是客户端");
                 Log.i("TCP","连接到了服务端的Socket");
             }catch (IOException i){
                 SystemClock.sleep(1000);
@@ -129,15 +130,12 @@ public class SocketActivity extends AppCompatActivity implements View.OnClickLis
             }
         }
 
-            Log.i("TCP","客户端1111111111111111111");
             try{
                 //接收服务端发送过来的信息
                 BufferedReader br = new BufferedReader(new InputStreamReader(
                         socket.getInputStream()));
                 while (!SocketActivity.this.isFinishing()){
-                    Log.i("TCP","客户端2222222222222222");
                     String msg = br.readLine();
-                    Log.i("TCP","客户端333333333333333");
                     if(msg != null){
                         Log.i("TCP","服务端发送的消息："+msg);
                         String time = formateDateTime(System.currentTimeMillis());
