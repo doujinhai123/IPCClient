@@ -3,8 +3,8 @@
     package="com.innovator.ipcclient">
 
     <uses-permission android:name="com.innovator.ipcserver.PROVIDER" />
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -22,7 +22,8 @@
         </activity>
         <activity android:name=".MessengerActivity" />
         <activity android:name=".ProviderActivity" />
-        <activity android:name=".SocketActivity"></activity>
+        <activity android:name=".SocketActivity" />
+        <activity android:name=".BinderPoolActivity"></activity>
     </application>
 
 </manifest>

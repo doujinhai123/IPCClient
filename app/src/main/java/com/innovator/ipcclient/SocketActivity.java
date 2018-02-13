@@ -23,6 +23,9 @@ import java.net.Socket;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * Socket 客户端
+ */
 public class SocketActivity extends AppCompatActivity implements View.OnClickListener{
 
     private static final int MESSAGE_RECEIVE_NEW_MSG = 1;

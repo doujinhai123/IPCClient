@@ -101,7 +101,7 @@ public class MainActivity extends Activity {
      * 确实是同步更改了 inout 传入的那个对象的值
      * @param v
      */
-    public void getBooks(View v) {
+    public void getBook(View v) {
 
         Log.i("TAG","打印 addBooks 之后的数据 ："+book.toString());
     }
@@ -121,6 +121,12 @@ public class MainActivity extends Activity {
     public void goTo2(View v) {
 
         Intent i = new Intent(this,SocketActivity.class);
+        startActivity(i);
+    }
+
+    public void goTo3(View v) {
+
+        Intent i = new Intent(this,BinderPoolActivity.class);
         startActivity(i);
     }
 
